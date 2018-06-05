@@ -1,0 +1,8 @@
+Alfred Appointments
+
+<ul>
+  <%= link_to 'Book a review session', new_booking_path %>
+  <% @appointments.each do |appointment| %>
+    <li><%= appointment.id %></li>
+  <% end %>
+</ul>
