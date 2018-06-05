@@ -1,8 +1,27 @@
 Alfred Appointments
 
-<ul>
   <%= link_to 'Book a review session', new_booking_path %>
-  <% @appointments.each do |appointment| %>
-    <li><%= appointment.id %></li>
+<table>
+  <thead>
+    <tr>
+      <th>Restaurant</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+    </tr>
+  </thead>
+  <% @bookings.each do |booking| %>
+    <tr>
+      <td>
+        <%= booking.restaurant %>
+      </td>
+      <td>
+        <%= booking.start_time.strftime('%T') %>,
+        <%= booking.start_time.strftime('%d-%m-%Y') %>
+      </td>
+      <td>
+        <%= booking.end_time.strftime('%T') %>,
+        <%= booking.end_time.strftime('%d-%m-%Y') %>
+      </td>
+    </tr>
   <% end %>
-</ul>
+</table>

@@ -1,0 +1,12 @@
+<h1>Book A Review Session</h1>
+
+<% flash.each do |key,value| %>
+  <%= value %>
+<% end %>
+
+<%= form_for @booking do |f| %>
+  <%= f.text_field :restaurant, placeholder: 'Restaurant Name' %>
+  <%= f.time_field :start_time %>
+  <%= f.time_field :end_time %>
+  <%= f.submit %>
+<% end %>
